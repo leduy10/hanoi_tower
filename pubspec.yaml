@@ -1,0 +1,8 @@
+name: hanoi_tower
+author: 
+homepage: 
+version: 0.0.1
+description: >
+  The Hanoi Tower game in Dart
+dependencies:
+  browser: any
