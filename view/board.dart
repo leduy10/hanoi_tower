@@ -21,7 +21,6 @@ class Board {
   int cellHeight;
 
   CarParkingModel carParkingModel;
-  Area _currentArea;
   Parking _currentParking;
 
   MenuBar menuBar;
@@ -38,23 +37,12 @@ class Board {
     menuBar = new MenuBar(this);
     actionPanel = new ActionPanel(this);
 
-    currentArea = carParkingModel.areas.getArea('beginner');
-    currentParking = currentArea.parkings.getParkingWithinArea(1);
+    currentParking = carParkingModel.parkings.getParking(3);
 
     // Canvas event.
     document.querySelector('#canvas').onMouseDown.listen(onMouseDown);
     // Redraw every INTERVAL ms.
     new Timer.periodic(const Duration(milliseconds: INTERVAL), (t) => redraw());
-  }
-
-  void set currentArea(Area area) {
-    _currentArea = area;
-    currentParking = area.parkings.getParkingWithinArea(1);
-    actionPanel.displayCurrentArea();
-  }
-
-  Area get currentArea {
-    return _currentArea;
   }
 
   void set currentParking(Parking parking) {

@@ -1,24 +1,5 @@
 part of hanoi_tower;
 
-printAreaParkingCar(CarParkingModel carParkingModel) {
-  print('-----------------------');
-  print('-Areas, Parkings, Cars-');
-  print('-----------------------');
-  Areas areas = carParkingModel.areas;
-  for (Area area in areas) {
-    area.display();
-    Parkings parkings = area.parkings;
-    for (Parking parking in parkings) {
-      parking.display();
-      Cars cars = parking.cars;
-      for (Car car in cars) {
-        car.display();
-        car.carBrand.display();
-      }
-    }
-  }
-}
-
 printCarBrandCar(CarParkingModel carParkingModel) {
   print('-----------------');
   print('-CarBrands, Cars-');
@@ -41,7 +22,6 @@ printParkingCar(CarParkingModel carParkingModel) {
   Parkings parkings = carParkingModel.parkings;
   for (Parking parking in parkings) {
     parking.display();
-    parking.area.display();
     Cars cars = parking.cars;
     for (Car car in cars) {
       car.display();
@@ -51,7 +31,6 @@ printParkingCar(CarParkingModel carParkingModel) {
 }
 
 printModel(CarParkingModel carParkingModel) {
-  printAreaParkingCar(carParkingModel);
   printCarBrandCar(carParkingModel);
   printParkingCar(carParkingModel);
 }

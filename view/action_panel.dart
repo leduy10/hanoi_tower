@@ -6,8 +6,8 @@ class ActionPanel {
 
   ButtonElement restartButton;
 
-  LabelElement areaLabel;
-  LabelElement parkingLabel;
+  LabelElement difficultyLabel;
+  LabelElement difficultyLabelLabel;
 
   ActionPanel(this.board) {
     restartButton = document.querySelector('#restart');
@@ -15,16 +15,13 @@ class ActionPanel {
       board.restart();
     });
 
-    areaLabel = document.querySelector('#area');
-    parkingLabel = document.querySelector('#parking');
-  }
-
-  void displayCurrentArea() {
-    areaLabel.text = board.currentArea.code;
+    difficultyLabel = document.querySelector('#difficulty');
+    difficultyLabelLabel = document.querySelector('#difficultyLabel');
   }
 
   void displayCurrentParking() {
-    parkingLabel.text = board.currentParking.number.toString();
+    difficultyLabel.text = "Difficulty: ";
+    difficultyLabelLabel.text = board.currentParking.number.toString() + " Discs";
   }
 
 }

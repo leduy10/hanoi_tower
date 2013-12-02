@@ -4,33 +4,35 @@ class MenuBar {
 
   final Board board;
 
-  // Area
-  ButtonElement beginnerAreaButton;
-  ButtonElement intermediateAreaButton;
-
   // Parking
-  ButtonElement parking1Button;
-  ButtonElement parking2Button;
+  ButtonElement disc3Button;
+  ButtonElement disc4Button;
+  ButtonElement disc5Button;
+  ButtonElement disc6Button;
+  ButtonElement disc7Button;
 
   MenuBar(this.board) {
-    beginnerAreaButton = document.querySelector('#beginner');
-    intermediateAreaButton = document.querySelector('#intermediate');
 
-    parking1Button = document.querySelector('#parking1');
-    parking2Button = document.querySelector('#parking2');
+    disc3Button = document.querySelector('#disc3');
+    disc4Button = document.querySelector('#disc4');
+    disc5Button = document.querySelector('#disc5');
+    disc6Button = document.querySelector('#disc6');
+    disc7Button = document.querySelector('#disc7');
 
-    beginnerAreaButton.onClick.listen((MouseEvent e) {
-      board.currentArea = board.carParkingModel.areas.getArea('beginner');
+    disc3Button.onClick.listen((MouseEvent e) {
+      board.currentParking = board.carParkingModel.parkings.getParking(3);
     });
-    intermediateAreaButton.onClick.listen((MouseEvent e) {
-      board.currentArea = board.carParkingModel.areas.getArea('intermediate');
+    disc4Button.onClick.listen((MouseEvent e) {
+      board.currentParking = board.carParkingModel.parkings.getParking(4);
     });
-
-    parking1Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.currentArea.parkings.getParkingWithinArea(1);
+    disc5Button.onClick.listen((MouseEvent e) {
+      board.currentParking = board.carParkingModel.parkings.getParking(5);
     });
-    parking2Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.currentArea.parkings.getParkingWithinArea(2);
+    disc6Button.onClick.listen((MouseEvent e) {
+      board.currentParking = board.carParkingModel.parkings.getParking(6);
+    });
+    disc7Button.onClick.listen((MouseEvent e) {
+      board.currentParking = board.carParkingModel.parkings.getParking(7);
     });
   }
 
