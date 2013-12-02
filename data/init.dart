@@ -19,7 +19,7 @@ initAreas() {
 
 initCarBrands() {
   CarBrand carBrandA = new CarBrand('A');
-  carBrandA.length = 2;
+  carBrandA.length = 1;
   carBrandA.colorName = 'green';
   carBrandA.color = '#66CC99';
   carBrandA.red = 102;
@@ -28,7 +28,7 @@ initCarBrands() {
   model.carBrands.add(carBrandA);
 
   CarBrand carBrandB = new CarBrand('B');
-  carBrandB.length = 2;
+  carBrandB.length = 3;
   carBrandB.colorName = 'orange';
   carBrandB.color = '#FFCC66';
   carBrandB.red = 255;
@@ -37,7 +37,7 @@ initCarBrands() {
   model.carBrands.add(carBrandB);
 
   CarBrand carBrandC = new CarBrand('C');
-  carBrandC.length = 2;
+  carBrandC.length = 5;
   carBrandC.colorName = 'cyan';
   carBrandC.color = '#00FFFF';
   carBrandC.red = 0;
@@ -46,7 +46,7 @@ initCarBrands() {
   model.carBrands.add(carBrandC);
 
   CarBrand carBrandD = new CarBrand('D');
-  carBrandD.length = 2;
+  carBrandD.length = 7;
   carBrandD.colorName = 'light pink';
   carBrandD.color = '#FF99CC';
   carBrandD.red = 255;
@@ -55,7 +55,7 @@ initCarBrands() {
   model.carBrands.add(carBrandD);
 
   CarBrand carBrandE = new CarBrand('E');
-  carBrandE.length = 2;
+  carBrandE.length = 9;
   carBrandE.colorName = 'dark magenta';
   carBrandE.color = '#660033';
   carBrandE.red = 102;
@@ -64,7 +64,7 @@ initCarBrands() {
   model.carBrands.add(carBrandE);
 
   CarBrand carBrandF = new CarBrand('F');
-  carBrandF.length = 2;
+  carBrandF.length = 11;
   carBrandF.colorName = 'dark green';
   carBrandF.color = '#009966';
   carBrandF.red = 0;
@@ -73,94 +73,13 @@ initCarBrands() {
   model.carBrands.add(carBrandF);
 
   CarBrand carBrandG = new CarBrand('G');
-  carBrandG.length = 2;
+  carBrandG.length = 13;
   carBrandG.colorName = 'gray';
   carBrandG.color = '#BEBEBE';
   carBrandG.red = 190;
   carBrandG.green = 190;
   carBrandG.blue = 190;
   model.carBrands.add(carBrandG);
-
-  CarBrand carBrandH = new CarBrand('H');
-  carBrandH.length = 2;
-  carBrandH.colorName = 'peach';
-  carBrandH.color = '#FF9966';
-  carBrandH.red = 255;
-  carBrandH.green = 153;
-  carBrandH.blue = 102;
-  model.carBrands.add(carBrandH);
-
-  CarBrand carBrandI = new CarBrand('I');
-  carBrandI.length = 2;
-  carBrandI.colorName = 'light gray';
-  carBrandI.color = '#D3D3D3';
-  carBrandI.red = 211;
-  carBrandI.green = 211;
-  carBrandI.blue = 211;
-  model.carBrands.add(carBrandI);
-
-  CarBrand carBrandJ = new CarBrand('J');
-  carBrandJ.length = 2;
-  carBrandJ.colorName = 'brown';
-  carBrandJ.color = '#996600';
-  carBrandJ.red = 153;
-  carBrandJ.green = 102;
-  carBrandJ.blue = 0;
-  model.carBrands.add(carBrandJ);
-
-  CarBrand carBrandK = new CarBrand('K');
-  carBrandK.length = 2;
-  carBrandK.colorName = 'mustard';
-  carBrandK.color = '#CC9900';
-  carBrandK.red = 204;
-  carBrandK.green = 153;
-  carBrandK.blue = 0;
-  model.carBrands.add(carBrandK);
-
-  CarBrand carBrandO = new CarBrand('O');
-  carBrandO.length = 3;
-  carBrandO.colorName = 'light yellow';
-  carBrandO.color = '#FFFF99';
-  carBrandO.red = 255;
-  carBrandO.green = 255;
-  carBrandO.blue = 153;
-  model.carBrands.add(carBrandO);
-
-  CarBrand carBrandP = new CarBrand('P');
-  carBrandP.length = 3;
-  carBrandP.colorName = 'magenta';
-  carBrandP.color = '#993366';
-  carBrandP.red = 153;
-  carBrandP.green = 51;
-  carBrandP.blue = 102;
-  model.carBrands.add(carBrandP);
-
-  CarBrand carBrandQ = new CarBrand('Q');
-  carBrandQ.length = 3;
-  carBrandQ.colorName = 'gray blue';
-  carBrandQ.color = '#6699CC';
-  carBrandQ.red = 102;
-  carBrandQ.green = 153;
-  carBrandQ.blue = 204;
-  model.carBrands.add(carBrandQ);
-
-  CarBrand carBrandR = new CarBrand('R');
-  carBrandR.length = 3;
-  carBrandR.colorName = 'deep sky blue';
-  carBrandR.color = '#00BFFF';
-  carBrandR.red = 0;
-  carBrandR.green = 191;
-  carBrandR.blue = 255;
-  model.carBrands.add(carBrandR);
-
-  CarBrand carBrandX = new CarBrand('X');
-  carBrandX.length = 2;
-  carBrandX.colorName = 'red';
-  carBrandX.color = '#CC0033';
-  carBrandX.red = 204;
-  carBrandX.green = 0;
-  carBrandX.blue = 51;
-  model.carBrands.add(carBrandX);
 }
 
 initParkings() {
@@ -211,8 +130,8 @@ initCarsOfParking1OfBeginnerArea(Area area, Parking parking) {
     if (carBrandA != null) {
       Car car1A = new Car(parking, carBrandA);
       car1A.orientation = 'horizontal';
-      car1A.startRow = 0;
-      car1A.startColumn = 0;
+      car1A.startRow = 13;
+      car1A.startColumn = 6;
       parking.cars.add(car1A);
       carBrandA.cars.add(car1A);
     }
@@ -220,9 +139,9 @@ initCarsOfParking1OfBeginnerArea(Area area, Parking parking) {
     CarBrand carBrandB = model.carBrands.getCarBrand('B');
     if (carBrandB != null) {
       Car car1B = new Car(parking, carBrandB);
-      car1B.orientation = 'vertical';
-      car1B.startRow = 4;
-      car1B.startColumn = 0;
+      car1B.orientation = 'horizontal';
+      car1B.startRow = 14;
+      car1B.startColumn = 5;
       parking.cars.add(car1B);
       carBrandB.cars.add(car1B);
     }
@@ -231,60 +150,50 @@ initCarsOfParking1OfBeginnerArea(Area area, Parking parking) {
     if (carBrandC != null) {
       Car car1C = new Car(parking, carBrandC);
       car1C.orientation = 'horizontal';
-      car1C.startRow = 4;
+      car1C.startRow = 15;
       car1C.startColumn = 4;
       parking.cars.add(car1C);
       carBrandC.cars.add(car1C);
     }
 
-    CarBrand carBrandO = model.carBrands.getCarBrand('O');
-    if (carBrandO != null) {
-      Car car1O = new Car(parking, carBrandO);
-      car1O.orientation = 'vertical';
-      car1O.startRow = 0;
-      car1O.startColumn = 5;
+    CarBrand carBrandD = model.carBrands.getCarBrand('D');
+    if (carBrandD != null) {
+      Car car1O = new Car(parking, carBrandD);
+      car1O.orientation = 'horizontal';
+      car1O.startRow = 16;
+      car1O.startColumn = 3;
       parking.cars.add(car1O);
-      carBrandO.cars.add(car1O);
+      carBrandD.cars.add(car1O);
     }
 
-    CarBrand carBrandP = model.carBrands.getCarBrand('P');
-    if (carBrandP != null) {
-      Car car1P = new Car(parking, carBrandP);
-      car1P.orientation = 'vertical';
-      car1P.startRow = 1;
-      car1P.startColumn = 0;
+    CarBrand carBrandE = model.carBrands.getCarBrand('E');
+    if (carBrandE != null) {
+      Car car1P = new Car(parking, carBrandE);
+      car1P.orientation = 'horizontal';
+      car1P.startRow = 17;
+      car1P.startColumn = 2;
       parking.cars.add(car1P);
-      carBrandP.cars.add(car1P);
+      carBrandE.cars.add(car1P);
     }
 
-    CarBrand carBrandQ = model.carBrands.getCarBrand('Q');
-    if (carBrandQ != null) {
-      Car car1Q = new Car(parking, carBrandQ);
-      car1Q.orientation = 'vertical';
-      car1Q.startRow = 1;
-      car1Q.startColumn = 3;
+    CarBrand carBrandF = model.carBrands.getCarBrand('F');
+    if (carBrandF != null) {
+      Car car1Q = new Car(parking, carBrandF);
+      car1Q.orientation = 'horizontal';
+      car1Q.startRow = 18;
+      car1Q.startColumn = 1;
       parking.cars.add(car1Q);
-      carBrandQ.cars.add(car1Q);
+      carBrandF.cars.add(car1Q);
     }
 
-    CarBrand carBrandR = model.carBrands.getCarBrand('R');
-    if (carBrandR != null) {
-      Car car1R = new Car(parking, carBrandR);
+    CarBrand carBrandG = model.carBrands.getCarBrand('G');
+    if (carBrandG != null) {
+      Car car1R = new Car(parking, carBrandG);
       car1R.orientation = 'horizontal';
-      car1R.startRow = 5;
-      car1R.startColumn = 2;
+      car1R.startRow = 19;
+      car1R.startColumn = 0;
       parking.cars.add(car1R);
-      carBrandR.cars.add(car1R);
-    }
-
-    CarBrand carBrandX = model.carBrands.getCarBrand('X');
-    if (carBrandX != null) {
-      Car car1X = new Car(parking, carBrandX);
-      car1X.orientation = 'horizontal';
-      car1X.startRow = 2;
-      car1X.startColumn = 1;
-      parking.cars.add(car1X);
-      carBrandX.cars.add(car1X);
+      carBrandG.cars.add(car1R);
     }
 
     for (Car car in parking.cars) {

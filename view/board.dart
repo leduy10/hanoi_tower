@@ -9,8 +9,8 @@ class Board {
   static final String LINE_COLOR = '#000000'; // black
   static final int SSS = 8; // selection square size
 
-  static final int ROWS_COUNT = 6;
-  static final int COLUMNS_COUNT = 6;
+  static final int ROWS_COUNT = 24;
+  static final int COLUMNS_COUNT = 24;
 
   CanvasElement canvas;
   CanvasRenderingContext2D context;
