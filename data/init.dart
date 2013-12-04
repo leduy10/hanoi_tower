@@ -1,7 +1,7 @@
 part of hanoi_tower;
 
 CarParkingModel model;
-final int END_ROW = 19;
+final int END_ROW = 18;
 
 init(CarParkingModel carParkingModel) {
   model = carParkingModel;
