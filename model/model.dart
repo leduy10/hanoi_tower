@@ -1,13 +1,11 @@
 part of hanoi_tower;
 
-class CarParkingModel {
+class HanoiTowerModel {
 
-  CarBrands carBrands;
-  Parkings parkings;
+  List parkings;
 
-  CarParkingModel() {
-    carBrands = new CarBrands();
-    parkings = new Parkings();
+  HanoiTowerModel() {
+    parkings = new List();
     init(this);
   }
 

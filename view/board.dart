@@ -20,8 +20,8 @@ class Board {
   int cellWidth;
   int cellHeight;
 
-  CarParkingModel carParkingModel;
-  Parking _currentParking;
+  HanoiTowerModel carParkingModel;
+  Tower _currentParking;
 
   MenuBar menuBar;
   ActionPanel actionPanel;
@@ -37,7 +37,7 @@ class Board {
     menuBar = new MenuBar(this);
     actionPanel = new ActionPanel(this);
 
-    currentParking = carParkingModel.parkings.getParking(3);
+    currentParking = carParkingModel.parkings.elementAt(0);
 
     // Canvas event.
     document.querySelector('#canvas').onMouseDown.listen(onMouseDown);
@@ -45,12 +45,12 @@ class Board {
     new Timer.periodic(const Duration(milliseconds: INTERVAL), (t) => redraw());
   }
 
-  void set currentParking(Parking parking) {
+  void set currentParking(Tower parking) {
     _currentParking = parking;
     actionPanel.displayCurrentParking();
   }
 
-  Parking get currentParking {
+  Tower get currentParking {
     return _currentParking;
   }
 
@@ -61,7 +61,7 @@ class Board {
   }
 
   void restart() {
-    for (Car car in currentParking.cars) {
+    for (Disk car in currentParking.disks) {
       car.currentRow = car.startRow;
       car.currentColumn = car.startColumn;
       car.selected = false;
@@ -83,28 +83,24 @@ class Board {
   }
 
   void displayCars() {
-    for (Car car in currentParking.cars) {
+    for (Disk car in currentParking.disks) {
       displayCar(car);
     }
   }
 
-  void displayCar(Car car) {
+  void displayCar(Disk car) {
     context.beginPath();
     int row = car.currentRow;
     int column = car.currentColumn;
     int x = column * cellWidth;
     int y = row * cellHeight;
-    int carLength = car.carBrand.length;
+    int carLength = car.length;
     int carWidth = cellWidth;
     int carHeight = cellHeight;
-    if (car.orientation == 'horizontal') {
-      carWidth = cellWidth * carLength;
-    } else {
-      carHeight = cellHeight * carLength;
-    }
+    carWidth = cellWidth * carLength;
     context.lineWidth = LINE_WIDTH;
     context.strokeStyle = LINE_COLOR;
-    context.fillStyle = car.carBrand.color;
+    context.fillStyle = car.color;
     // context.rect(x, y , carWidth, carHeight);
     context.fillRect(x, y , carWidth, carHeight);
     if (car.selected) {
@@ -170,8 +166,8 @@ class Board {
     context.closePath();
   }
 
-  Car getCarInCell(int row, int column) {
-    for (Car car in currentParking.cars) {
+  Disk getCarInCell(int row, int column) {
+    for (Disk car in currentParking.disks) {
       if (car.inCell(row, column)) {
         return car;
       }
@@ -179,8 +175,8 @@ class Board {
     return null;
   }
 
-  Car getSelectedCarAfterOrBeforeCell(int row, int column) {
-    for (Car car in currentParking.cars) {
+  Disk getSelectedCarAfterOrBeforeCell(int row, int column) {
+    for (Disk car in currentParking.disks) {
       if (car.selected && car.afterOrBeforeCell(row, column)) {
         return car;
       }
@@ -191,15 +187,15 @@ class Board {
   void onMouseDown(MouseEvent e) {
     int row = e.offset.y ~/ cellHeight;
     int column = e.offset.x ~/ cellWidth;
-    Car car = getCarInCell(row, column);
+    Disk car = getCarInCell(row, column);
     if (car != null) {
-      currentParking.cars.deselect();
+      currentParking.deselect();
       car.selected = true;
     } else {
       car = getSelectedCarAfterOrBeforeCell(row, column);
       if (car != null) {
         car.moveToOrTowardCell(row, column);
-        if (car.carBrand.code == 'X' && car.currentColumn == COLUMNS_COUNT - car.carBrand.length) {
+        if (car.currentColumn == COLUMNS_COUNT - car.length) {
           car.currentColumn = COLUMNS_COUNT; // the car exits the parking
         }
       }

@@ -20,19 +20,19 @@ class MenuBar {
     disc7Button = document.querySelector('#disc7');
 
     disc3Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.carParkingModel.parkings.getParking(3);
+      board.currentParking = board.carParkingModel.parkings.elementAt(0);
     });
     disc4Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.carParkingModel.parkings.getParking(4);
+      board.currentParking = board.carParkingModel.parkings.elementAt(1);
     });
     disc5Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.carParkingModel.parkings.getParking(5);
+      board.currentParking = board.carParkingModel.parkings.elementAt(2);
     });
     disc6Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.carParkingModel.parkings.getParking(6);
+      board.currentParking = board.carParkingModel.parkings.elementAt(3);
     });
     disc7Button.onClick.listen((MouseEvent e) {
-      board.currentParking = board.carParkingModel.parkings.getParking(7);
+      board.currentParking = board.carParkingModel.parkings.elementAt(4);
     });
   }
 
