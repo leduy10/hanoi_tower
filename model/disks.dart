@@ -2,18 +2,13 @@ part of hanoi_tower;
 
 class Disk extends Concept {
 
-  Tower parking;
-
   String color;
-  int startRow;
-  int startColumn;
   int length;
-
-  int currentRow;
-  int currentColumn;
+  double currentRow;
+  double currentColumn;
   bool selected = false;
 
-  Disk(this.parking, this.length, this.color);
+  Disk(this.length, this.color);
 
   bool inCell(int row, int column) {
     if (currentRow == row && currentColumn == column) {
@@ -86,35 +81,6 @@ class Disk extends Concept {
       }
     }
     return false;
-  }
-
-  bool afterCell(int row, int column) {
-    if (currentRow == row && currentColumn == column + 1) {
-      return true;
-    }
-    return false;
-  }
-
-  bool beforeCell(int row, int column) {
-    if (currentRow == row && length == 2 && currentColumn == column - 2) {
-      return true;
-    } else if (currentRow == row && length == 3 && currentColumn == column - 3) {
-      return true;
-    }
-    return false;
-  }
-
-  bool afterOrBeforeCell(int row, int column) {
-    return afterCell(row, column) || beforeCell(row, column);
-  }
-
-  moveToOrTowardCell(int row, int column) {
-    if (afterCell(row, column)) {
-      currentRow = row;
-      currentColumn = column;
-    } else if (beforeCell(row, column)) {
-      currentColumn = currentColumn + 1;
-    }
   }
 
 }

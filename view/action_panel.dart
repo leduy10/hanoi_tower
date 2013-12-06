@@ -19,9 +19,9 @@ class ActionPanel {
     difficultyLabelLabel = document.querySelector('#difficultyLabel');
   }
 
-  void displayCurrentParking() {
+  void displayLabels() {
     difficultyLabel.text = "Difficulty: ";
-    difficultyLabelLabel.text = board.currentParking.number.toString() + " Discs";
+    difficultyLabelLabel.text = board.hanoiTowerModel.difficulty.toString() + " Discs";
   }
 
 }
