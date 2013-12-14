@@ -47,6 +47,7 @@ class Board {
     hanoiTowerModel.tower1.draw(context, cellWidth, cellHeight);
     hanoiTowerModel.tower2.draw(context, cellWidth, cellHeight);
     hanoiTowerModel.tower3.draw(context, cellWidth, cellHeight);
+    hanoiTowerModel.drawWin(context, cellWidth, cellHeight);
     actionPanel.displayLabels();
   }
 

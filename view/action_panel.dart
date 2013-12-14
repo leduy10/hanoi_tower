@@ -8,6 +8,9 @@ class ActionPanel {
 
   LabelElement difficultyLabel;
   LabelElement difficultyLabelLabel;
+  
+  LabelElement movesLabel;
+  LabelElement movesLabelLabel;
 
   ActionPanel(this.board) {
     restartButton = document.querySelector('#restart');
@@ -17,11 +20,17 @@ class ActionPanel {
 
     difficultyLabel = document.querySelector('#difficulty');
     difficultyLabelLabel = document.querySelector('#difficultyLabel');
+    
+    movesLabel = document.querySelector('#moves');
+    movesLabelLabel = document.querySelector('#movesLabel');
   }
 
   void displayLabels() {
     difficultyLabel.text = "Difficulty: ";
     difficultyLabelLabel.text = board.hanoiTowerModel.difficulty.toString() + " Discs";
+    
+    movesLabel.text = "Moves: ";
+    movesLabelLabel.text = board.hanoiTowerModel.moves.toString() + " Moves";
   }
 
 }
