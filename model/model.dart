@@ -16,11 +16,14 @@ class HanoiTowerModel {
   int difficulty;
   int moves;
   bool won;
+  Stopwatch myTimer;
 
   HanoiTowerModel() {
     tower1 = new Tower(1);
     tower2 = new Tower(2);
     tower3 = new Tower(3);
+    
+    myTimer = new Stopwatch();
     
     init(this);
   }
@@ -30,6 +33,8 @@ class HanoiTowerModel {
     difficulty = nbrDisks;
     moves = 0;
     won = false;
+    myTimer.reset();
+    myTimer.start();
     
     tower1.clear();
     tower2.clear();
@@ -161,6 +166,7 @@ class HanoiTowerModel {
     moves = moves + 1;
     if (tower3.disks.length == difficulty) {
       won = true;
+      myTimer.stop();
     }
   }
 
@@ -171,7 +177,25 @@ class HanoiTowerModel {
       context.strokeStyle = LINE_COLOR;
       context.fillStyle = LINE_COLOR;
       context.font = "60px sans-serif";
-      context.fillText("YOU WIN!", 5 * cellWidth, 5 * cellHeight);
+      context.fillText("YOU WIN!", 1 * cellWidth, 3 * cellHeight);
+      context.stroke();
+      context.closePath();
+      
+      context.beginPath();
+      context.lineWidth = LINE_WIDTH;
+      context.strokeStyle = LINE_COLOR;
+      context.fillStyle = LINE_COLOR;
+      context.font = "60px sans-serif";
+      context.fillText("Moves: ${moves}", 1 * cellWidth, 5 * cellHeight);
+      context.stroke();
+      context.closePath();
+      
+      context.beginPath();
+      context.lineWidth = LINE_WIDTH;
+      context.strokeStyle = LINE_COLOR;
+      context.fillStyle = LINE_COLOR;
+      context.font = "60px sans-serif";
+      context.fillText("Time: ${myTimer.elapsed.toString()}", 1 * cellWidth, 7 * cellHeight);
       context.stroke();
       context.closePath();
     }

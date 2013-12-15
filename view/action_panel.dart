@@ -11,6 +11,9 @@ class ActionPanel {
   
   LabelElement movesLabel;
   LabelElement movesLabelLabel;
+  
+  LabelElement timeLabel;
+  LabelElement timeLabelLabel;
 
   ActionPanel(this.board) {
     restartButton = document.querySelector('#restart');
@@ -23,14 +26,20 @@ class ActionPanel {
     
     movesLabel = document.querySelector('#moves');
     movesLabelLabel = document.querySelector('#movesLabel');
+    
+    timeLabel = document.querySelector('#time');
+    timeLabelLabel = document.querySelector('#timeLabel');
   }
 
   void displayLabels() {
     difficultyLabel.text = "Difficulty: ";
-    difficultyLabelLabel.text = board.hanoiTowerModel.difficulty.toString() + " Discs";
+    difficultyLabelLabel.text = board.hanoiTowerModel.difficulty.toString() + " Discs --- ";
     
     movesLabel.text = "Moves: ";
-    movesLabelLabel.text = board.hanoiTowerModel.moves.toString() + " Moves";
+    movesLabelLabel.text = board.hanoiTowerModel.moves.toString() + " --- ";
+    
+    timeLabel.text = "Time: ";
+    timeLabelLabel.text = board.hanoiTowerModel.myTimer.elapsed.toString();
   }
 
 }
