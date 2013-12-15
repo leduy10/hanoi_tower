@@ -1,7 +1,7 @@
 SIO-2109
 
 Dominic Leduy
-Hamza Ouahmmou
+Hamza Ouhammou
 Salah Chahibi
 
 The Hanoi Tower game in Dart.
